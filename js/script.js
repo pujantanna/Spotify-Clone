@@ -41,7 +41,6 @@ async function getSongs(folder) {
         songUL.innerHTML = songUL.innerHTML + `<li><img class="invert" width="34" src="img/music.svg" alt="">
                             <div class="info">
                                 <div> ${song.replaceAll("%20", " ")}</div>
-                                <div>Harry</div>
                             </div>
                             <div class="playnow">
                                 <span>Play Now</span>
@@ -74,7 +73,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
     console.log("displaying albums")
-    let a = await fetch(`/songs/`)
+    let a = await fetch(``)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -117,7 +116,7 @@ async function displayAlbums() {
 
 async function main() {
     // Get the list of all the songs
-    await getSongs("songs/ncs")
+    await getSongs("html/Spotify-Clone/songs")
     playMusic(songs[0], true)
 
     // Display all the albums on the page
